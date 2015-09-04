@@ -3,6 +3,7 @@
 @import 'avatar.scss';
 @import 'text.scss';
 @import 'shake.scss';
+@import 'animations.scss';
 
 
 body {
@@ -30,11 +31,12 @@ body {
       top: 50%;
       left: 0;
       width: 100%;
-      height: 100%;
+      z-index: 15;
 
       .wrap {
         margin-top: -345px;
         h1 {
+          cursor: pointer;
           transform: rotate(3deg);
           text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
           display: inline-block;

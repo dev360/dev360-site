@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Text from './Text.js';
-import Scene from './Scene.js';
 
 
 
@@ -15,35 +13,52 @@ export default class Avatar extends Component {
 
     this.textOver = this.textOver.bind(this);
     this.textOut = this.textOut.bind(this);
+    this.logoOver = this.logoOver.bind(this);
+    this.logoOut = this.logoOut.bind(this);
   }
 
   componentDidMount() {
     PubSub.subscribe('text:over', this.textOver);
     PubSub.subscribe('text:out', this.textOut);
 
-    this.scene = Scene();
+    PubSub.subscribe('logo:over', this.logoOver);
+    PubSub.subscribe('logo:out', this.logoOut);
   }
 
   textOver(topic, item) {
-    var types = {
-      'medium':   ' medium shake shake-slow',
-      'twitter':  ' twitter shake shake-vertical',
-      'github':   ' github shake shake-crazy',
-    }
-    var type = types[item.item.type] || '';
-    var className = `avatar${type}`;
-    this.setState({ className: className });
+    this.setState({ type: item.item.type });
     this.forceUpdate();
   }
   
   textOut(topic, item) {
-    var className = 'avatar';
-    this.setState({ className: className });
+    this.setState({ type: null });
     this.forceUpdate();
   }
 
+  logoOver(topic, item) {
+    this.setState({ hover: true });
+    this.forceUpdate();
+  }
+
+  logoOut(topic, item) {
+    this.setState({ hover: false });
+    this.forceUpdate();
+  }
+
+  get className() {
+    var types = {
+      'medium':   ' medium shake shake-slow',
+      'twitter':  ' twitter shake shake-vertical',
+      'github':   ' github shake shake-crazy'
+    };
+
+    var type = types[this.state.type] || '';
+    var hover = (this.state.hover === true) ? ' hover': '';
+    return `avatar${hover}${type}`;
+  }
+
   render() {
-    var className = this.state.className || 'avatar';
+    var className = this.className;
     return (
       <div className="wrap">
         <div className={className}>

@@ -25,7 +25,7 @@
         -moz-border-radius: 150px;
         background: url(/images/avatar.png) no-repeat center center;
         background-size: 300px 300px;
-        margin: 0 20px 20px 20px; }
-        #avatar .wrap .avatar .img:hover {
-          background-size: 1600px 1600px;
-          background-position: -960px -113px; }
+        margin: 0 20px 20px 20px;
+        animation: quiver 10s ease-in infinite; }
+      #avatar .wrap .avatar.hover .img {
+        animation: zoom 0.3s ease-in infinite; }
