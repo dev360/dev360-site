@@ -149,6 +149,13 @@ export default function () {
         demo.spawn(x, y);
       }
     }, sec);
+
+    if (item.item.type === 'github') {
+      sec = 1000 + Math.random() * 1000
+      setTimeout(function() {
+        PubSub.publish('text:out');
+      }, sec);
+    }
   
   });
 

@@ -29,6 +29,7 @@
           color: #fff;
           margin-bottom: -10px; }
         #container .text a h1:hover {
-          text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8); }
+          text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8);
+          border-bottom: 1px solid #fff; }
           #container .text a h1:hover i {
             opacity: 1; }

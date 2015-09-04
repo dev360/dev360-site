@@ -44,6 +44,10 @@ body {
           font-weight: 600;
           font-family: 'Slabo 27px', serif;
           color: #fff;      
+
+          &:hover {
+            text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8);
+          }
         }
       }
 

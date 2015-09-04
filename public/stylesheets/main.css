@@ -7797,7 +7797,8 @@ th.hide-for-touch {
           color: #fff;
           margin-bottom: -10px; }
         #container .text a h1:hover {
-          text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8); }
+          text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8);
+          border-bottom: 1px solid #fff; }
           #container .text a h1:hover i {
             opacity: 1; }
 
@@ -10714,7 +10715,7 @@ th.hide-for-touch {
     background-size: 303px 303px;
     transform: rotate(0deg); }
   55% {
-    background-size: 303px 303px;
+    background-size: 303px 333px;
     transform: rotate(10deg); }
   70% {
     background-size: 303px 303px;
@@ -10764,6 +10765,8 @@ body {
           font-weight: 600;
           font-family: 'Slabo 27px', serif;
           color: #fff; }
+          body #background #logo .wrap h1:hover {
+            text-shadow: 2px 2px 0px rgba(90, 50, 10, 0.8); }
     body #background #canvas {
       position: absolute;
       z-index: 11;
