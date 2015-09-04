@@ -24,19 +24,27 @@ body {
     background-size: cover;         /* around images */
 
     #logo {
-      margin-top: -90px;
+      margin-top: 0;
       margin-left: 10px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
 
-      h1 {
-        transform: rotate(3deg);
-        text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
-        display: inline-block;
-        margin-top: 60px;
-        font-size: 110px;
-        font-weight: 600;
-        font-family: 'Slabo 27px', serif;
-        color: #fff;      
+      .wrap {
+        margin-top: -345px;
+        h1 {
+          transform: rotate(3deg);
+          text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+          display: inline-block;
+          font-size: 110px;
+          font-weight: 600;
+          font-family: 'Slabo 27px', serif;
+          color: #fff;      
+        }
       }
+
     }
 
 

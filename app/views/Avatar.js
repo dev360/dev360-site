@@ -45,8 +45,10 @@ export default class Avatar extends Component {
   render() {
     var className = this.state.className || 'avatar';
     return (
-      <div className={className}>
-        <div className="img">
+      <div className="wrap">
+        <div className={className}>
+          <div className="img">
+          </div>
         </div>
       </div>
     );

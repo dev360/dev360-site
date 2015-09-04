@@ -39,7 +39,9 @@ export default class Logo extends Component {
   render() {
     var className = this.state.className || '';
     return (
-      <h1 className={className}>dev360</h1>
+      <div className="wrap">
+        <h1 className={className}>dev360</h1>
+      </div>
     );
   }
 }
