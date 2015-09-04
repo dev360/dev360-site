@@ -60,13 +60,6 @@ gulp.task('styles', function() {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.css))
     .pipe(notify({ message: 'styles task complete' }));
-
-  //return gulp.src(paths.sass_entry)
-    //.pipe(sass({
-          //paths: [ path.join(__dirname, 'sass', 'includes') ]
-        //}))
-    //.pipe(gulp.dest(paths.css))
-    //.pipe(notify({ message: 'styles task complete' }));
 }); 
 
 gulp.task('js:lib', function() {
@@ -96,7 +89,6 @@ gulp.task('js:app', function() {
     });
     bundle = watchify(bundle, { poll: 100 });
     bundle.transform(babelify.configure({
-        //ignore: /(lib)/
     }));
     bundle.on('update', function(){
         console.log('starting rebundle..');
@@ -135,8 +127,6 @@ gulp.task('js:app:minify', function() {
 });
 
 gulp.task('watch', function() {
-  //gulp.watch([paths.scripts, paths.react, '!'+ PROJ_ROOT +'js/app/main.js'], ['js:app']);
-  // gulp.watch([paths.scripts, paths.react, '!'+ PROJ_ROOT +'js/app/main.js'], ['js:app', 'js:app:minify']);
   gulp.watch([paths.scripts, paths.react], ['js:app']);
   gulp.watch([paths.lib], ['js:lib']);
   gulp.watch([paths.sass], ['styles']);
