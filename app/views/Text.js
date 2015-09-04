@@ -39,7 +39,8 @@ export default class Text extends Component {
       <a ref="link"
           href={this.state.item.href}
           onMouseOver={this.onOver}
-          onMouseOut={this.onOut}>
+          onMouseOut={this.onOut}
+          target="_blank" >
         <h1>
           <i className={className}></i>
           {this.state.item.text}
